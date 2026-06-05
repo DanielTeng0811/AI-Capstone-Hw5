@@ -6,7 +6,7 @@ Project title: Semantic Affordance Grounding for Cup Stacking and Baseline Task 
 
 Group: Group 1
 
-Members: add the final group member list before submission.
+Members: 李享 (110350011), 鍾翊琦 (112550210), 鄧皓澤 (112652046), 呂泰廷 (112652030), 白詩愷 (109550202)
 
 ## Selected Task
 
