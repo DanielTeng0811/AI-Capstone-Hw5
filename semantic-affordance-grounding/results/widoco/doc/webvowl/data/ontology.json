@@ -1,0 +1,737 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2000/01/rdf-schema", "https://hcis.io/ontology/aicapstone/2026", "http://www.w3.org/2001/XMLSchema", "http://xmlns.com/foaf/0.1" ],
+    "title" : {
+      "en" : "Group 1 Semantic Affordance Grounding Ontology"
+    },
+    "iri" : "https://hcis.io/ontology/aicapstone/2026/group01",
+    "author" : [ "https://hcis.io/ontology/aicapstone/2026/group01/group01" ],
+    "description" : {
+      "en" : "This ontology models cup stacking, cutlery arrangement, and toy block collection objects as typed individuals with task roles, perception labels, pose-frame identifiers, and affordance-based graspability inference."
+    },
+    "labels" : {
+      "en" : "Group 1 Semantic Affordance Grounding Ontology"
+    },
+    "comments" : {
+      "en" : "A group-authored ontology for grounding baseline AI Capstone task objects and connecting the cup-stacking final project to graspability reasoning."
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/4.0/",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "https://hcis.io/ontology/aicapstone/2026/group01/group01",
+        "type" : "iri"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "undefined",
+        "value" : "2026-05-28",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "g01",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://hcis.io/ontology/aicapstone/2026/group01/",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "Group 1 Semantic Affordance Grounding Ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://hcis.io/ontology/aicapstone/2026/GraspableObject",
+    "baseIri" : "https://hcis.io/ontology/aicapstone/2026",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "GraspableObject",
+      "en" : "graspable object"
+    },
+    "intersection" : [ "1" ],
+    "comment" : {
+      "en" : "A physical object inferred to afford grasping by the robot end effector in the task context."
+    },
+    "attributes" : [ "intersection", "external" ],
+    "id" : "0",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://hcis.io/ontology/aicapstone/2026/Knife",
+    "baseIri" : "https://hcis.io/ontology/aicapstone/2026",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Knife"
+    },
+    "individuals" : [ {
+      "iri" : "https://hcis.io/ontology/aicapstone/2026/group01/knife01",
+      "baseIri" : "https://hcis.io/ontology/aicapstone/2026/group01",
+      "annotations" : {
+        "hasColor" : [ {
+          "identifier" : "hasColor",
+          "language" : "undefined",
+          "value" : "silver",
+          "type" : "label"
+        } ],
+        "hasTaskRole" : [ {
+          "identifier" : "hasTaskRole",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/TargetObject",
+          "type" : "iri"
+        } ],
+        "hasApproxWidth" : [ {
+          "identifier" : "hasApproxWidth",
+          "language" : "undefined",
+          "value" : "0.025",
+          "type" : "label"
+        } ],
+        "canBeManipulatedBy" : [ {
+          "identifier" : "canBeManipulatedBy",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/group01/robotGripper",
+          "type" : "iri"
+        } ],
+        "hasPoseFrame" : [ {
+          "identifier" : "hasPoseFrame",
+          "language" : "undefined",
+          "value" : "world/object_knife",
+          "type" : "label"
+        } ],
+        "hasObjectLabel" : [ {
+          "identifier" : "hasObjectLabel",
+          "language" : "undefined",
+          "value" : "knife",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The knife instance required for the baseline cutlery-arrangement task and modeled as a direct manipulation target."
+      },
+      "labels" : {
+        "IRI-based" : "knife01",
+        "en" : "knife 01"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "https://hcis.io/ontology/aicapstone/2026/PhysicalObject",
+    "baseIri" : "https://hcis.io/ontology/aicapstone/2026",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PhysicalObject"
+    },
+    "subClasses" : [ "0" ],
+    "attributes" : [ "external" ],
+    "id" : "1"
+  }, {
+    "iri" : "https://hcis.io/ontology/aicapstone/2026/EndEffector",
+    "baseIri" : "https://hcis.io/ontology/aicapstone/2026",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EndEffector"
+    },
+    "individuals" : [ {
+      "iri" : "https://hcis.io/ontology/aicapstone/2026/group01/robotGripper",
+      "baseIri" : "https://hcis.io/ontology/aicapstone/2026/group01",
+      "comment" : {
+        "en" : "The simplified end effector used by the robot policy and ontology reasoning workflow for grasping task objects."
+      },
+      "labels" : {
+        "IRI-based" : "robotGripper",
+        "en" : "robot gripper"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://hcis.io/ontology/aicapstone/2026/ToyBlock",
+    "baseIri" : "https://hcis.io/ontology/aicapstone/2026",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ToyBlock"
+    },
+    "individuals" : [ {
+      "iri" : "https://hcis.io/ontology/aicapstone/2026/group01/block01",
+      "baseIri" : "https://hcis.io/ontology/aicapstone/2026/group01",
+      "annotations" : {
+        "hasColor" : [ {
+          "identifier" : "hasColor",
+          "language" : "undefined",
+          "value" : "red",
+          "type" : "label"
+        } ],
+        "hasTaskRole" : [ {
+          "identifier" : "hasTaskRole",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/CollectableObject",
+          "type" : "iri"
+        } ],
+        "canBeManipulatedBy" : [ {
+          "identifier" : "canBeManipulatedBy",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/group01/robotGripper",
+          "type" : "iri"
+        } ],
+        "hasApproxWidth" : [ {
+          "identifier" : "hasApproxWidth",
+          "language" : "undefined",
+          "value" : "0.035",
+          "type" : "label"
+        } ],
+        "hasPoseFrame" : [ {
+          "identifier" : "hasPoseFrame",
+          "language" : "undefined",
+          "value" : "world/object_block_01",
+          "type" : "label"
+        } ],
+        "hasObjectLabel" : [ {
+          "identifier" : "hasObjectLabel",
+          "language" : "undefined",
+          "value" : "toy_block_red",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "A toy block instance required for the baseline toy-block-collection task and modeled as a collectable grasp target."
+      },
+      "labels" : {
+        "IRI-based" : "block01",
+        "en" : "toy block 01"
+      }
+    }, {
+      "iri" : "https://hcis.io/ontology/aicapstone/2026/group01/block02",
+      "baseIri" : "https://hcis.io/ontology/aicapstone/2026/group01",
+      "annotations" : {
+        "hasColor" : [ {
+          "identifier" : "hasColor",
+          "language" : "undefined",
+          "value" : "green",
+          "type" : "label"
+        } ],
+        "hasTaskRole" : [ {
+          "identifier" : "hasTaskRole",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/CollectableObject",
+          "type" : "iri"
+        } ],
+        "hasApproxWidth" : [ {
+          "identifier" : "hasApproxWidth",
+          "language" : "undefined",
+          "value" : "0.035",
+          "type" : "label"
+        } ],
+        "canBeManipulatedBy" : [ {
+          "identifier" : "canBeManipulatedBy",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/group01/robotGripper",
+          "type" : "iri"
+        } ],
+        "hasPoseFrame" : [ {
+          "identifier" : "hasPoseFrame",
+          "language" : "undefined",
+          "value" : "world/object_block_02",
+          "type" : "label"
+        } ],
+        "hasObjectLabel" : [ {
+          "identifier" : "hasObjectLabel",
+          "language" : "undefined",
+          "value" : "toy_block_green",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "A second toy block instance required for the baseline toy-block-collection task and modeled as a collectable grasp target."
+      },
+      "labels" : {
+        "IRI-based" : "block02",
+        "en" : "toy block 02"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "4"
+  }, {
+    "iri" : "https://hcis.io/ontology/aicapstone/2026/ManipulationTask",
+    "baseIri" : "https://hcis.io/ontology/aicapstone/2026",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ManipulationTask"
+    },
+    "individuals" : [ {
+      "iri" : "https://hcis.io/ontology/aicapstone/2026/group01/toyBlockCollectionBaseline",
+      "baseIri" : "https://hcis.io/ontology/aicapstone/2026/group01",
+      "annotations" : {
+        "hasReferenceObject" : [ {
+          "identifier" : "hasReferenceObject",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/group01/basket01",
+          "type" : "iri"
+        } ],
+        "hasTargetObject" : [ {
+          "identifier" : "hasTargetObject",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/group01/block02",
+          "type" : "iri"
+        }, {
+          "identifier" : "hasTargetObject",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/group01/block01",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "The baseline task context for grounding collectable toy blocks and their basket container target."
+      },
+      "labels" : {
+        "IRI-based" : "toyBlockCollectionBaseline",
+        "en" : "toy block collection baseline task"
+      }
+    }, {
+      "iri" : "https://hcis.io/ontology/aicapstone/2026/group01/cutleryArrangementBaseline",
+      "baseIri" : "https://hcis.io/ontology/aicapstone/2026/group01",
+      "annotations" : {
+        "hasReferenceObject" : [ {
+          "identifier" : "hasReferenceObject",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/group01/plate01",
+          "type" : "iri"
+        } ],
+        "hasTargetObject" : [ {
+          "identifier" : "hasTargetObject",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/group01/fork01",
+          "type" : "iri"
+        }, {
+          "identifier" : "hasTargetObject",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/group01/knife01",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "The baseline task context for grounding the knife, fork, and plate objects required by Homework 5."
+      },
+      "labels" : {
+        "IRI-based" : "cutleryArrangementBaseline",
+        "en" : "cutlery arrangement baseline task"
+      }
+    }, {
+      "iri" : "https://hcis.io/ontology/aicapstone/2026/group01/cupStackingFinalProject",
+      "baseIri" : "https://hcis.io/ontology/aicapstone/2026/group01",
+      "annotations" : {
+        "hasReferenceObject" : [ {
+          "identifier" : "hasReferenceObject",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/group01/pinkCup01",
+          "type" : "iri"
+        } ],
+        "hasTargetObject" : [ {
+          "identifier" : "hasTargetObject",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/group01/blueCup01",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "The final project task in which the learned policy moves the blue cup onto the pink cup."
+      },
+      "labels" : {
+        "IRI-based" : "cupStackingFinalProject",
+        "en" : "blue cup stacking final project task"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "5"
+  }, {
+    "iri" : "https://hcis.io/ontology/aicapstone/2026/Cup",
+    "baseIri" : "https://hcis.io/ontology/aicapstone/2026",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Cup"
+    },
+    "individuals" : [ {
+      "iri" : "https://hcis.io/ontology/aicapstone/2026/group01/blueCup01",
+      "baseIri" : "https://hcis.io/ontology/aicapstone/2026/group01",
+      "annotations" : {
+        "hasColor" : [ {
+          "identifier" : "hasColor",
+          "language" : "undefined",
+          "value" : "blue",
+          "type" : "label"
+        } ],
+        "hasTaskRole" : [ {
+          "identifier" : "hasTaskRole",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/TargetObject",
+          "type" : "iri"
+        } ],
+        "canBeManipulatedBy" : [ {
+          "identifier" : "canBeManipulatedBy",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/group01/robotGripper",
+          "type" : "iri"
+        } ],
+        "hasApproxWidth" : [ {
+          "identifier" : "hasApproxWidth",
+          "language" : "undefined",
+          "value" : "0.075",
+          "type" : "label"
+        } ],
+        "hasPoseFrame" : [ {
+          "identifier" : "hasPoseFrame",
+          "language" : "undefined",
+          "value" : "world/object_blue_cup",
+          "type" : "label"
+        } ],
+        "hasObjectLabel" : [ {
+          "identifier" : "hasObjectLabel",
+          "language" : "undefined",
+          "value" : "blue_cup",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The blue cup instance used as the direct manipulation target in the cup-stacking final project."
+      },
+      "labels" : {
+        "IRI-based" : "blueCup01",
+        "en" : "blue cup 01"
+      }
+    }, {
+      "iri" : "https://hcis.io/ontology/aicapstone/2026/group01/pinkCup01",
+      "baseIri" : "https://hcis.io/ontology/aicapstone/2026/group01",
+      "annotations" : {
+        "hasColor" : [ {
+          "identifier" : "hasColor",
+          "language" : "undefined",
+          "value" : "pink",
+          "type" : "label"
+        } ],
+        "hasTaskRole" : [ {
+          "identifier" : "hasTaskRole",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/ReferenceObject",
+          "type" : "iri"
+        } ],
+        "hasApproxWidth" : [ {
+          "identifier" : "hasApproxWidth",
+          "language" : "undefined",
+          "value" : "0.075",
+          "type" : "label"
+        } ],
+        "canBeManipulatedBy" : [ {
+          "identifier" : "canBeManipulatedBy",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/group01/robotGripper",
+          "type" : "iri"
+        } ],
+        "hasPoseFrame" : [ {
+          "identifier" : "hasPoseFrame",
+          "language" : "undefined",
+          "value" : "world/object_pink_cup",
+          "type" : "label"
+        } ],
+        "hasObjectLabel" : [ {
+          "identifier" : "hasObjectLabel",
+          "language" : "undefined",
+          "value" : "pink_cup",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The pink cup instance used as the stacking reference object and placement target for the blue cup."
+      },
+      "labels" : {
+        "IRI-based" : "pinkCup01",
+        "en" : "pink cup 01"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "6"
+  }, {
+    "iri" : "https://hcis.io/ontology/aicapstone/2026/Plate",
+    "baseIri" : "https://hcis.io/ontology/aicapstone/2026",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Plate"
+    },
+    "individuals" : [ {
+      "iri" : "https://hcis.io/ontology/aicapstone/2026/group01/plate01",
+      "baseIri" : "https://hcis.io/ontology/aicapstone/2026/group01",
+      "annotations" : {
+        "hasColor" : [ {
+          "identifier" : "hasColor",
+          "language" : "undefined",
+          "value" : "white",
+          "type" : "label"
+        } ],
+        "hasTaskRole" : [ {
+          "identifier" : "hasTaskRole",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/ReferenceObject",
+          "type" : "iri"
+        } ],
+        "hasApproxWidth" : [ {
+          "identifier" : "hasApproxWidth",
+          "language" : "undefined",
+          "value" : "0.240",
+          "type" : "label"
+        } ],
+        "hasPoseFrame" : [ {
+          "identifier" : "hasPoseFrame",
+          "language" : "undefined",
+          "value" : "world/object_plate",
+          "type" : "label"
+        } ],
+        "hasObjectLabel" : [ {
+          "identifier" : "hasObjectLabel",
+          "language" : "undefined",
+          "value" : "plate",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The plate instance required for the baseline cutlery-arrangement task and modeled as a support/reference object rather than a grasp target."
+      },
+      "labels" : {
+        "IRI-based" : "plate01",
+        "en" : "plate 01"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "7"
+  }, {
+    "iri" : "https://hcis.io/ontology/aicapstone/2026/Basket",
+    "baseIri" : "https://hcis.io/ontology/aicapstone/2026",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Basket"
+    },
+    "individuals" : [ {
+      "iri" : "https://hcis.io/ontology/aicapstone/2026/group01/basket01",
+      "baseIri" : "https://hcis.io/ontology/aicapstone/2026/group01",
+      "annotations" : {
+        "hasColor" : [ {
+          "identifier" : "hasColor",
+          "language" : "undefined",
+          "value" : "yellow",
+          "type" : "label"
+        } ],
+        "hasTaskRole" : [ {
+          "identifier" : "hasTaskRole",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/ContainerTarget",
+          "type" : "iri"
+        } ],
+        "hasApproxWidth" : [ {
+          "identifier" : "hasApproxWidth",
+          "language" : "undefined",
+          "value" : "0.300",
+          "type" : "label"
+        } ],
+        "hasPoseFrame" : [ {
+          "identifier" : "hasPoseFrame",
+          "language" : "undefined",
+          "value" : "world/object_basket",
+          "type" : "label"
+        } ],
+        "hasObjectLabel" : [ {
+          "identifier" : "hasObjectLabel",
+          "language" : "undefined",
+          "value" : "basket",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The basket instance required for the baseline toy-block-collection task and modeled as a container target rather than a grasp target."
+      },
+      "labels" : {
+        "IRI-based" : "basket01",
+        "en" : "basket 01"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "8"
+  }, {
+    "iri" : "https://hcis.io/ontology/aicapstone/2026/Fork",
+    "baseIri" : "https://hcis.io/ontology/aicapstone/2026",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Fork"
+    },
+    "individuals" : [ {
+      "iri" : "https://hcis.io/ontology/aicapstone/2026/group01/fork01",
+      "baseIri" : "https://hcis.io/ontology/aicapstone/2026/group01",
+      "annotations" : {
+        "hasColor" : [ {
+          "identifier" : "hasColor",
+          "language" : "undefined",
+          "value" : "silver",
+          "type" : "label"
+        } ],
+        "hasTaskRole" : [ {
+          "identifier" : "hasTaskRole",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/TargetObject",
+          "type" : "iri"
+        } ],
+        "hasApproxWidth" : [ {
+          "identifier" : "hasApproxWidth",
+          "language" : "undefined",
+          "value" : "0.025",
+          "type" : "label"
+        } ],
+        "canBeManipulatedBy" : [ {
+          "identifier" : "canBeManipulatedBy",
+          "language" : "undefined",
+          "value" : "https://hcis.io/ontology/aicapstone/2026/group01/robotGripper",
+          "type" : "iri"
+        } ],
+        "hasPoseFrame" : [ {
+          "identifier" : "hasPoseFrame",
+          "language" : "undefined",
+          "value" : "world/object_fork",
+          "type" : "label"
+        } ],
+        "hasObjectLabel" : [ {
+          "identifier" : "hasObjectLabel",
+          "language" : "undefined",
+          "value" : "fork",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The fork instance required for the baseline cutlery-arrangement task and modeled as a direct manipulation target."
+      },
+      "labels" : {
+        "IRI-based" : "fork01",
+        "en" : "fork 01"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "9"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "10",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://xmlns.com/foaf/0.1/Group",
+    "baseIri" : "http://xmlns.com/foaf/0.1",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Group"
+    },
+    "individuals" : [ {
+      "iri" : "https://hcis.io/ontology/aicapstone/2026/group01/group01",
+      "baseIri" : "https://hcis.io/ontology/aicapstone/2026/group01",
+      "annotations" : {
+        "name" : [ {
+          "identifier" : "name",
+          "language" : "en",
+          "value" : "Group 1",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The Group 1 identity for the Homework 5 semantic affordance grounding submission."
+      },
+      "labels" : {
+        "IRI-based" : "group01",
+        "en" : "Group 1"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "13"
+  }, {
+    "iri" : "https://hcis.io/ontology/aicapstone/2026/GraspingAffordance",
+    "baseIri" : "https://hcis.io/ontology/aicapstone/2026",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "GraspingAffordance"
+    },
+    "attributes" : [ "external" ],
+    "id" : "14"
+  } ],
+  "property" : [ {
+    "id" : "11",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "12",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "range" : "1",
+    "domain" : "0",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "11"
+  }, {
+    "iri" : "https://hcis.io/ontology/aicapstone/2026/hasAffordance",
+    "baseIri" : "https://hcis.io/ontology/aicapstone/2026",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "hasAffordance"
+    },
+    "domain" : "10",
+    "attributes" : [ "object", "external" ],
+    "id" : "12"
+  } ]
+}

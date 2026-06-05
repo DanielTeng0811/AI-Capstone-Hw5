@@ -1,0 +1,182 @@
+@prefix cap:     <https://hcis.io/ontology/aicapstone/2026/> .
+@prefix g01:     <https://hcis.io/ontology/aicapstone/2026/group01/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+
+<https://hcis.io/ontology/aicapstone/2026/group01>
+    a owl:Ontology ;
+    owl:imports <https://hcis.io/ontology/aicapstone/2026> ;
+    rdfs:label "Group 1 Semantic Affordance Grounding Ontology"@en ;
+    rdfs:comment
+        "A group-authored ontology for grounding baseline AI Capstone task objects and connecting the cup-stacking final project to graspability reasoning."@en ;
+    dcterms:title "Group 1 Semantic Affordance Grounding Ontology"@en ;
+    dcterms:description
+        "This ontology models cup stacking, cutlery arrangement, and toy block collection objects as typed individuals with task roles, perception labels, pose-frame identifiers, and affordance-based graspability inference."@en ;
+    dcterms:creator g01:group01 ;
+    dcterms:created "2026-05-28"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "g01" ;
+    vann:preferredNamespaceUri "https://hcis.io/ontology/aicapstone/2026/group01/" .
+
+g01:group01
+    a foaf:Group ;
+    rdfs:label "Group 1"@en ;
+    rdfs:comment "The Group 1 identity for the Homework 5 semantic affordance grounding submission."@en ;
+    foaf:name "Group 1"@en .
+
+# Reasoning target from the homework specification.
+
+cap:GraspableObject
+    a owl:Class ;
+    rdfs:subClassOf cap:PhysicalObject ;
+    rdfs:label "graspable object"@en ;
+    rdfs:comment
+        "A physical object inferred to afford grasping by the robot end effector in the task context."@en ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf (
+            cap:PhysicalObject
+            [
+                a owl:Restriction ;
+                owl:onProperty cap:hasAffordance ;
+                owl:someValuesFrom cap:GraspingAffordance
+            ]
+        )
+    ] .
+
+# Group-specific task and agent context.
+
+g01:cupStackingFinalProject
+    a cap:ManipulationTask ;
+    rdfs:label "blue cup stacking final project task"@en ;
+    rdfs:comment
+        "The final project task in which the learned policy moves the blue cup onto the pink cup."@en ;
+    cap:hasTargetObject g01:blueCup01 ;
+    cap:hasReferenceObject g01:pinkCup01 .
+
+g01:cutleryArrangementBaseline
+    a cap:ManipulationTask ;
+    rdfs:label "cutlery arrangement baseline task"@en ;
+    rdfs:comment
+        "The baseline task context for grounding the knife, fork, and plate objects required by Homework 5."@en ;
+    cap:hasTargetObject g01:knife01, g01:fork01 ;
+    cap:hasReferenceObject g01:plate01 .
+
+g01:toyBlockCollectionBaseline
+    a cap:ManipulationTask ;
+    rdfs:label "toy block collection baseline task"@en ;
+    rdfs:comment
+        "The baseline task context for grounding collectable toy blocks and their basket container target."@en ;
+    cap:hasTargetObject g01:block01, g01:block02 ;
+    cap:hasReferenceObject g01:basket01 .
+
+g01:robotGripper
+    a cap:EndEffector ;
+    rdfs:label "robot gripper"@en ;
+    rdfs:comment
+        "The simplified end effector used by the robot policy and ontology reasoning workflow for grasping task objects."@en .
+
+# Cup stacking objects: the group's final project focus.
+
+g01:blueCup01
+    a cap:Cup ;
+    rdfs:label "blue cup 01"@en ;
+    rdfs:comment
+        "The blue cup instance used as the direct manipulation target in the cup-stacking final project."@en ;
+    cap:hasColor "blue" ;
+    cap:hasObjectLabel "blue_cup" ;
+    cap:hasTaskRole cap:TargetObject ;
+    cap:hasPoseFrame "world/object_blue_cup" ;
+    cap:hasApproxWidth "0.075"^^xsd:decimal ;
+    cap:canBeManipulatedBy g01:robotGripper .
+
+g01:pinkCup01
+    a cap:Cup ;
+    rdfs:label "pink cup 01"@en ;
+    rdfs:comment
+        "The pink cup instance used as the stacking reference object and placement target for the blue cup."@en ;
+    cap:hasColor "pink" ;
+    cap:hasObjectLabel "pink_cup" ;
+    cap:hasTaskRole cap:ReferenceObject ;
+    cap:hasPoseFrame "world/object_pink_cup" ;
+    cap:hasApproxWidth "0.075"^^xsd:decimal ;
+    cap:canBeManipulatedBy g01:robotGripper .
+
+# Cutlery arrangement baseline objects.
+
+g01:knife01
+    a cap:Knife ;
+    rdfs:label "knife 01"@en ;
+    rdfs:comment
+        "The knife instance required for the baseline cutlery-arrangement task and modeled as a direct manipulation target."@en ;
+    cap:hasColor "silver" ;
+    cap:hasObjectLabel "knife" ;
+    cap:hasTaskRole cap:TargetObject ;
+    cap:hasPoseFrame "world/object_knife" ;
+    cap:hasApproxWidth "0.025"^^xsd:decimal ;
+    cap:canBeManipulatedBy g01:robotGripper .
+
+g01:fork01
+    a cap:Fork ;
+    rdfs:label "fork 01"@en ;
+    rdfs:comment
+        "The fork instance required for the baseline cutlery-arrangement task and modeled as a direct manipulation target."@en ;
+    cap:hasColor "silver" ;
+    cap:hasObjectLabel "fork" ;
+    cap:hasTaskRole cap:TargetObject ;
+    cap:hasPoseFrame "world/object_fork" ;
+    cap:hasApproxWidth "0.025"^^xsd:decimal ;
+    cap:canBeManipulatedBy g01:robotGripper .
+
+g01:plate01
+    a cap:Plate ;
+    rdfs:label "plate 01"@en ;
+    rdfs:comment
+        "The plate instance required for the baseline cutlery-arrangement task and modeled as a support/reference object rather than a grasp target."@en ;
+    cap:hasColor "white" ;
+    cap:hasObjectLabel "plate" ;
+    cap:hasTaskRole cap:ReferenceObject ;
+    cap:hasPoseFrame "world/object_plate" ;
+    cap:hasApproxWidth "0.240"^^xsd:decimal .
+
+# Toy block collection baseline objects.
+
+g01:block01
+    a cap:ToyBlock ;
+    rdfs:label "toy block 01"@en ;
+    rdfs:comment
+        "A toy block instance required for the baseline toy-block-collection task and modeled as a collectable grasp target."@en ;
+    cap:hasColor "red" ;
+    cap:hasObjectLabel "toy_block_red" ;
+    cap:hasTaskRole cap:CollectableObject ;
+    cap:hasPoseFrame "world/object_block_01" ;
+    cap:hasApproxWidth "0.035"^^xsd:decimal ;
+    cap:canBeManipulatedBy g01:robotGripper .
+
+g01:block02
+    a cap:ToyBlock ;
+    rdfs:label "toy block 02"@en ;
+    rdfs:comment
+        "A second toy block instance required for the baseline toy-block-collection task and modeled as a collectable grasp target."@en ;
+    cap:hasColor "green" ;
+    cap:hasObjectLabel "toy_block_green" ;
+    cap:hasTaskRole cap:CollectableObject ;
+    cap:hasPoseFrame "world/object_block_02" ;
+    cap:hasApproxWidth "0.035"^^xsd:decimal ;
+    cap:canBeManipulatedBy g01:robotGripper .
+
+g01:basket01
+    a cap:Basket ;
+    rdfs:label "basket 01"@en ;
+    rdfs:comment
+        "The basket instance required for the baseline toy-block-collection task and modeled as a container target rather than a grasp target."@en ;
+    cap:hasColor "yellow" ;
+    cap:hasObjectLabel "basket" ;
+    cap:hasTaskRole cap:ContainerTarget ;
+    cap:hasPoseFrame "world/object_basket" ;
+    cap:hasApproxWidth "0.300"^^xsd:decimal .

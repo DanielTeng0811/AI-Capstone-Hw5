@@ -1,0 +1,14 @@
+Inferred graspable objects
+==========================
+
+Query: queries/graspable_objects.rq
+Data: ontology/inferred-results.ttl
+
+object                   name               label              role
+-----------------------------------------------------------------------------------------------
+block01                  toy block 01       toy_block_red      CollectableObject
+block02                  toy block 02       toy_block_green    CollectableObject
+blueCup01                blue cup 01        blue_cup           TargetObject
+fork01                   fork 01            fork               TargetObject
+knife01                  knife 01           knife              TargetObject
+pinkCup01                pink cup 01        pink_cup           ReferenceObject

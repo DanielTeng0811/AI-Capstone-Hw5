@@ -1,0 +1,29 @@
+PREFIX cap: <https://hcis.io/ontology/aicapstone/2026/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?task ?taskName ?obj ?objName ?type ?role
+WHERE {
+  ?task a cap:ManipulationTask ;
+        rdfs:label ?taskName .
+  {
+    ?task cap:hasTargetObject ?obj .
+  }
+  UNION
+  {
+    ?task cap:hasReferenceObject ?obj .
+  }
+  ?obj a ?type ;
+       rdfs:label ?objName .
+  OPTIONAL { ?obj cap:hasTaskRole ?role . }
+  VALUES ?type {
+    cap:Cup
+    cap:Knife
+    cap:Fork
+    cap:Plate
+    cap:ToyBlock
+    cap:Basket
+  }
+  FILTER(STRSTARTS(STR(?obj), "https://hcis.io/ontology/aicapstone/2026/group01/"))
+}
+ORDER BY ?task ?obj

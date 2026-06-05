@@ -1,0 +1,408 @@
+@prefix cap: <https://hcis.io/ontology/aicapstone/2026/> .
+@prefix cora: <http://purl.org/ieee1872-owl/cora-bare#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix g01: <https://hcis.io/ontology/aicapstone/2026/group01/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix soma: <http://www.ease-crc.org/ont/SOMA.owl#> .
+@prefix sumocora: <http://purl.org/ieee1872-owl/sumo-cora#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cap:RobotAgent a owl:Class ;
+    rdfs:label "robot agent"@en ;
+    rdfs:comment "A robot or robot-controlled agent that can perceive objects, reason over the ontology, and act in the task environment."@en ;
+    skos:closeMatch cora:Robot ;
+    skos:definition "A robot or robot-controlled agent that can perceive, reason about, and manipulate objects in the task environment."@en ;
+    skos:prefLabel "robot agent"@en ;
+    skos:relatedMatch sumocora:Agent ;
+    skos:scopeNote "The course term is aligned with CORA at the level of robot-as-agent or robot-as-system. It remains locally defined for the purposes of this homework."@en .
+
+cap:canBeManipulatedBy a owl:ObjectProperty ;
+    rdfs:label "can be manipulated by"@en ;
+    rdfs:comment "Relates a physical object to an end effector capable of manipulating it."@en ;
+    rdfs:domain cap:PhysicalObject ;
+    rdfs:range cap:EndEffector .
+
+cap:group01 a owl:Ontology ;
+    rdfs:label "Group 1 Semantic Affordance Grounding Ontology"@en ;
+    dcterms:created "2026-05-28"^^xsd:date ;
+    dcterms:creator g01:group01 ;
+    dcterms:description "This ontology models cup stacking, cutlery arrangement, and toy block collection objects as typed individuals with task roles, perception labels, pose-frame identifiers, and affordance-based graspability inference."@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:title "Group 1 Semantic Affordance Grounding Ontology"@en ;
+    vann:preferredNamespacePrefix "g01" ;
+    vann:preferredNamespaceUri "https://hcis.io/ontology/aicapstone/2026/group01/" ;
+    rdfs:comment "A group-authored ontology for grounding baseline AI Capstone task objects and connecting the cup-stacking final project to graspability reasoning."@en ;
+    owl:imports <https://hcis.io/ontology/aicapstone/2026> .
+
+g01:cupStackingFinalProject a cap:ManipulationTask ;
+    rdfs:label "blue cup stacking final project task"@en ;
+    rdfs:comment "The final project task in which the learned policy moves the blue cup onto the pink cup."@en ;
+    cap:hasReferenceObject g01:pinkCup01 ;
+    cap:hasTargetObject g01:blueCup01 .
+
+g01:cutleryArrangementBaseline a cap:ManipulationTask ;
+    rdfs:label "cutlery arrangement baseline task"@en ;
+    rdfs:comment "The baseline task context for grounding the knife, fork, and plate objects required by Homework 5."@en ;
+    cap:hasReferenceObject g01:plate01 ;
+    cap:hasTargetObject g01:fork01,
+        g01:knife01 .
+
+g01:toyBlockCollectionBaseline a cap:ManipulationTask ;
+    rdfs:label "toy block collection baseline task"@en ;
+    rdfs:comment "The baseline task context for grounding collectable toy blocks and their basket container target."@en ;
+    cap:hasReferenceObject g01:basket01 ;
+    cap:hasTargetObject g01:block01,
+        g01:block02 .
+
+cap:hasApproxWidth a owl:DatatypeProperty ;
+    rdfs:label "has approximate width"@en ;
+    rdfs:comment "Records an approximate object width, which may be useful for checking whether an object fits within a gripper capability."@en ;
+    rdfs:domain cap:PhysicalObject ;
+    rdfs:range xsd:decimal .
+
+cap:hasColor a owl:DatatypeProperty ;
+    rdfs:label "has color"@en ;
+    rdfs:comment "Records the perceived or assigned color of a physical object."@en ;
+    rdfs:domain cap:PhysicalObject ;
+    rdfs:range xsd:string .
+
+cap:hasObjectLabel a owl:DatatypeProperty ;
+    rdfs:label "has object label"@en ;
+    rdfs:comment "Records the object label used by perception, simulation, or task documentation."@en ;
+    rdfs:domain cap:PhysicalObject ;
+    rdfs:range xsd:string .
+
+cap:hasPoseFrame a owl:DatatypeProperty ;
+    rdfs:label "has pose frame"@en ;
+    rdfs:comment "Links an ontology individual to a coordinate frame or pose-frame identifier used in perception, reconstruction, or simulation."@en ;
+    rdfs:domain cap:PhysicalObject ;
+    rdfs:range xsd:string .
+
+cap:hasReferenceObject a owl:ObjectProperty ;
+    rdfs:label "has reference object"@en ;
+    rdfs:comment "Relates a task to a physical object used as a spatial or semantic reference."@en ;
+    rdfs:domain cap:Task ;
+    rdfs:range cap:PhysicalObject .
+
+cap:hasTargetObject a owl:ObjectProperty ;
+    rdfs:label "has target object"@en ;
+    rdfs:comment "Relates a task to a physical object that is directly acted upon in that task."@en ;
+    rdfs:domain cap:Task ;
+    rdfs:range cap:PhysicalObject .
+
+cap:hasTaskRole a owl:ObjectProperty ;
+    rdfs:label "has task role"@en ;
+    rdfs:comment "Relates a physical object to the role it plays in a task."@en ;
+    rdfs:domain cap:PhysicalObject ;
+    rdfs:range cap:TaskRole .
+
+<https://hcis.io/ontology/aicapstone/2026> a owl:Ontology ;
+    rdfs:label "AI Capstone 2026 Course Ontology"@en ;
+    dcterms:created "2026-05-22"^^xsd:date ;
+    dcterms:creator cap:ccyont ;
+    dcterms:description "This ontology defines a compact course vocabulary for representing physical task objects, task roles, manipulation affordances, grounding identifiers, and inferable graspability in the AI Capstone 2026 Physical AI project."@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:title "AI Capstone 2026 Course Ontology"@en ;
+    vann:preferredNamespacePrefix "cap" ;
+    vann:preferredNamespaceUri "https://hcis.io/ontology/aicapstone/2026/" ;
+    rdfs:comment "A reduced educational ontology profile for semantic and affordance grounding of graspable objects in the AI Capstone 2026 course project."@en .
+
+cap:Basket a owl:Class ;
+    rdfs:label "basket"@en ;
+    rdfs:comment "A container target used to receive toy blocks in the toy-block-collection task."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty cap:hasAffordance ;
+            owl:someValuesFrom cap:ContainmentAffordance ],
+        cap:PhysicalObject .
+
+cap:ContainerTarget a owl:Class ;
+    rdfs:label "container target"@en ;
+    rdfs:comment "A task role for an object that receives or contains other objects."@en ;
+    rdfs:subClassOf cap:TaskRole ;
+    skos:definition "A task role for an object that receives or contains other objects, such as the basket in toy block collection."@en ;
+    skos:prefLabel "container target"@en ;
+    skos:relatedMatch soma:Deposit,
+        soma:Deposition ;
+    skos:scopeNote "This term is used locally to describe the role of a container in the course task, not to assert equivalence with a SOMA action or process class."@en .
+
+cap:ContainmentAffordance a owl:Class ;
+    rdfs:label "containment affordance"@en ;
+    rdfs:comment "An affordance by which an object can contain or receive other objects."@en ;
+    rdfs:subClassOf cap:Affordance .
+
+cap:Fork a owl:Class ;
+    rdfs:label "fork"@en ;
+    rdfs:comment "A cutlery object to be placed in the cutlery-arrangement task."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty cap:hasAffordance ;
+            owl:someValuesFrom cap:GraspingAffordance ],
+        cap:PhysicalObject .
+
+cap:Knife a owl:Class ;
+    rdfs:label "knife"@en ;
+    rdfs:comment "A cutlery object to be placed in the cutlery-arrangement task."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty cap:hasAffordance ;
+            owl:someValuesFrom cap:GraspingAffordance ],
+        cap:PhysicalObject .
+
+cap:Plate a owl:Class ;
+    rdfs:label "plate"@en ;
+    rdfs:comment "A reference object used for arranging cutlery in the cutlery-arrangement task."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty cap:hasAffordance ;
+            owl:someValuesFrom cap:SupportAffordance ],
+        cap:PhysicalObject .
+
+cap:StackabilityAffordance a owl:Class ;
+    rdfs:label "stackability affordance"@en ;
+    rdfs:comment "An affordance by which an object can participate in a stacking relation with another object."@en ;
+    rdfs:subClassOf cap:Affordance .
+
+cap:SupportAffordance a owl:Class ;
+    rdfs:label "support affordance"@en ;
+    rdfs:comment "An affordance by which an object can support the placement or arrangement of other objects."@en ;
+    rdfs:subClassOf cap:Affordance .
+
+cap:ccyont a foaf:Person ;
+    foaf:mbox <mailto:ccy@hptp.org> ;
+    foaf:name "Chun-yien Chang"@en .
+
+g01:basket01 a cap:Basket ;
+    rdfs:label "basket 01"@en ;
+    rdfs:comment "The basket instance required for the baseline toy-block-collection task and modeled as a container target rather than a grasp target."@en ;
+    cap:hasApproxWidth 0.300 ;
+    cap:hasColor "yellow" ;
+    cap:hasObjectLabel "basket" ;
+    cap:hasPoseFrame "world/object_basket" ;
+    cap:hasTaskRole cap:ContainerTarget .
+
+g01:block01 a cap:GraspableObject,
+        cap:PhysicalObject,
+        cap:ToyBlock ;
+    rdfs:label "toy block 01"@en ;
+    rdfs:comment "A toy block instance required for the baseline toy-block-collection task and modeled as a collectable grasp target."@en ;
+    cap:canBeManipulatedBy g01:robotGripper ;
+    cap:hasAffordance g01:block01GraspingAffordance ;
+    cap:hasApproxWidth 0.035 ;
+    cap:hasColor "red" ;
+    cap:hasObjectLabel "toy_block_red" ;
+    cap:hasPoseFrame "world/object_block_01" ;
+    cap:hasTaskRole cap:CollectableObject .
+
+g01:block01GraspingAffordance a cap:GraspingAffordance ;
+    rdfs:label "inferred grasping affordance for block01"@en ;
+    rdfs:comment "Materialized by the homework rule layer because this object's asserted class has an owl:someValuesFrom restriction to cap:GraspingAffordance."@en .
+
+g01:block02 a cap:GraspableObject,
+        cap:PhysicalObject,
+        cap:ToyBlock ;
+    rdfs:label "toy block 02"@en ;
+    rdfs:comment "A second toy block instance required for the baseline toy-block-collection task and modeled as a collectable grasp target."@en ;
+    cap:canBeManipulatedBy g01:robotGripper ;
+    cap:hasAffordance g01:block02GraspingAffordance ;
+    cap:hasApproxWidth 0.035 ;
+    cap:hasColor "green" ;
+    cap:hasObjectLabel "toy_block_green" ;
+    cap:hasPoseFrame "world/object_block_02" ;
+    cap:hasTaskRole cap:CollectableObject .
+
+g01:block02GraspingAffordance a cap:GraspingAffordance ;
+    rdfs:label "inferred grasping affordance for block02"@en ;
+    rdfs:comment "Materialized by the homework rule layer because this object's asserted class has an owl:someValuesFrom restriction to cap:GraspingAffordance."@en .
+
+g01:blueCup01 a cap:Cup,
+        cap:GraspableObject,
+        cap:PhysicalObject ;
+    rdfs:label "blue cup 01"@en ;
+    rdfs:comment "The blue cup instance used as the direct manipulation target in the cup-stacking final project."@en ;
+    cap:canBeManipulatedBy g01:robotGripper ;
+    cap:hasAffordance g01:blueCup01GraspingAffordance ;
+    cap:hasApproxWidth 0.075 ;
+    cap:hasColor "blue" ;
+    cap:hasObjectLabel "blue_cup" ;
+    cap:hasPoseFrame "world/object_blue_cup" ;
+    cap:hasTaskRole cap:TargetObject .
+
+g01:blueCup01GraspingAffordance a cap:GraspingAffordance ;
+    rdfs:label "inferred grasping affordance for blueCup01"@en ;
+    rdfs:comment "Materialized by the homework rule layer because this object's asserted class has an owl:someValuesFrom restriction to cap:GraspingAffordance."@en .
+
+g01:fork01 a cap:Fork,
+        cap:GraspableObject,
+        cap:PhysicalObject ;
+    rdfs:label "fork 01"@en ;
+    rdfs:comment "The fork instance required for the baseline cutlery-arrangement task and modeled as a direct manipulation target."@en ;
+    cap:canBeManipulatedBy g01:robotGripper ;
+    cap:hasAffordance g01:fork01GraspingAffordance ;
+    cap:hasApproxWidth 0.025 ;
+    cap:hasColor "silver" ;
+    cap:hasObjectLabel "fork" ;
+    cap:hasPoseFrame "world/object_fork" ;
+    cap:hasTaskRole cap:TargetObject .
+
+g01:fork01GraspingAffordance a cap:GraspingAffordance ;
+    rdfs:label "inferred grasping affordance for fork01"@en ;
+    rdfs:comment "Materialized by the homework rule layer because this object's asserted class has an owl:someValuesFrom restriction to cap:GraspingAffordance."@en .
+
+g01:group01 a foaf:Group ;
+    rdfs:label "Group 1"@en ;
+    rdfs:comment "The Group 1 identity for the Homework 5 semantic affordance grounding submission."@en ;
+    foaf:name "Group 1"@en .
+
+g01:knife01 a cap:GraspableObject,
+        cap:Knife,
+        cap:PhysicalObject ;
+    rdfs:label "knife 01"@en ;
+    rdfs:comment "The knife instance required for the baseline cutlery-arrangement task and modeled as a direct manipulation target."@en ;
+    cap:canBeManipulatedBy g01:robotGripper ;
+    cap:hasAffordance g01:knife01GraspingAffordance ;
+    cap:hasApproxWidth 0.025 ;
+    cap:hasColor "silver" ;
+    cap:hasObjectLabel "knife" ;
+    cap:hasPoseFrame "world/object_knife" ;
+    cap:hasTaskRole cap:TargetObject .
+
+g01:knife01GraspingAffordance a cap:GraspingAffordance ;
+    rdfs:label "inferred grasping affordance for knife01"@en ;
+    rdfs:comment "Materialized by the homework rule layer because this object's asserted class has an owl:someValuesFrom restriction to cap:GraspingAffordance."@en .
+
+g01:pinkCup01 a cap:Cup,
+        cap:GraspableObject,
+        cap:PhysicalObject ;
+    rdfs:label "pink cup 01"@en ;
+    rdfs:comment "The pink cup instance used as the stacking reference object and placement target for the blue cup."@en ;
+    cap:canBeManipulatedBy g01:robotGripper ;
+    cap:hasAffordance g01:pinkCup01GraspingAffordance ;
+    cap:hasApproxWidth 0.075 ;
+    cap:hasColor "pink" ;
+    cap:hasObjectLabel "pink_cup" ;
+    cap:hasPoseFrame "world/object_pink_cup" ;
+    cap:hasTaskRole cap:ReferenceObject .
+
+g01:pinkCup01GraspingAffordance a cap:GraspingAffordance ;
+    rdfs:label "inferred grasping affordance for pinkCup01"@en ;
+    rdfs:comment "Materialized by the homework rule layer because this object's asserted class has an owl:someValuesFrom restriction to cap:GraspingAffordance."@en .
+
+g01:plate01 a cap:Plate ;
+    rdfs:label "plate 01"@en ;
+    rdfs:comment "The plate instance required for the baseline cutlery-arrangement task and modeled as a support/reference object rather than a grasp target."@en ;
+    cap:hasApproxWidth 0.240 ;
+    cap:hasColor "white" ;
+    cap:hasObjectLabel "plate" ;
+    cap:hasPoseFrame "world/object_plate" ;
+    cap:hasTaskRole cap:ReferenceObject .
+
+cap:CollectableObject a owl:Class ;
+    rdfs:label "collectable object"@en ;
+    rdfs:comment "A task role for an object that should be collected into another object or location."@en ;
+    rdfs:subClassOf cap:TaskRole .
+
+cap:Cup a owl:Class ;
+    rdfs:label "cup"@en ;
+    rdfs:comment "A container-like object used in the cup-stacking task."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty cap:hasAffordance ;
+            owl:someValuesFrom cap:GraspingAffordance ],
+        [ a owl:Restriction ;
+            owl:onProperty cap:hasAffordance ;
+            owl:someValuesFrom cap:StackabilityAffordance ],
+        cap:PhysicalObject .
+
+cap:EndEffector a owl:Class ;
+    rdfs:label "end effector"@en ;
+    rdfs:comment "A robot component used to physically interact with objects, such as a gripper."@en ;
+    skos:definition "A robot component used to physically interact with objects, such as a gripper."@en ;
+    skos:prefLabel "end effector"@en ;
+    skos:relatedMatch soma:Gripper ;
+    skos:scopeNote "This homework treats end effectors at a simplified level sufficient for graspability reasoning."@en .
+
+cap:ReferenceObject a owl:Class ;
+    rdfs:label "reference object"@en ;
+    rdfs:comment "A task role for an object used as a spatial or semantic reference for arranging other objects."@en ;
+    rdfs:subClassOf cap:TaskRole .
+
+cap:ToyBlock a owl:Class ;
+    rdfs:label "toy block"@en ;
+    rdfs:comment "A small object to be collected into the basket in the toy-block-collection task."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty cap:hasAffordance ;
+            owl:someValuesFrom cap:GraspingAffordance ],
+        cap:PhysicalObject .
+
+cap:ManipulationTask a owl:Class ;
+    rdfs:label "manipulation task"@en ;
+    rdfs:comment "A task in which a robot changes the pose, state, or arrangement of physical objects."@en ;
+    rdfs:subClassOf cap:Task ;
+    skos:broadMatch dul:Task ;
+    skos:definition "A robot task in which an agent changes the pose, state, or arrangement of physical objects."@en ;
+    skos:prefLabel "manipulation task"@en ;
+    skos:relatedMatch soma:Manipulating ;
+    skos:scopeNote "The course term covers the project tasks, including cup stacking, cutlery arrangement, and toy block collection."@en .
+
+cap:TargetObject a owl:Class ;
+    rdfs:label "target object"@en ;
+    rdfs:comment "A task role for an object that is directly acted upon or manipulated."@en ;
+    rdfs:subClassOf cap:TaskRole .
+
+cap:Task a owl:Class ;
+    rdfs:label "task"@en ;
+    rdfs:comment "A goal-directed activity to be performed or evaluated in the course project."@en .
+
+cap:Affordance a owl:Class ;
+    rdfs:label "affordance"@en ;
+    rdfs:comment "An action possibility associated with an object in relation to a robot capability and task context."@en .
+
+cap:TaskRole a owl:Class ;
+    rdfs:label "task role"@en ;
+    rdfs:comment "A role that an object plays within a task."@en .
+
+cap:GraspableObject a owl:Class ;
+    rdfs:label "graspable object"@en ;
+    rdfs:comment "A physical object inferred to afford grasping by the robot end effector in the task context."@en ;
+    rdfs:subClassOf cap:PhysicalObject ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( cap:PhysicalObject [ a owl:Restriction ;
+                        owl:onProperty cap:hasAffordance ;
+                        owl:someValuesFrom cap:GraspingAffordance ] ) ] ;
+    skos:definition "A physical object inferred to afford grasping by a robot end effector in the task context."@en ;
+    skos:prefLabel "graspable object"@en ;
+    skos:relatedMatch soma:MovedObject,
+        soma:Patient ;
+    skos:scopeNote "This is a course-level inferred class. It should not be treated as equivalent to a SOMA role such as soma:MovedObject or soma:Patient, because those terms describe participation roles in activities rather than the local OWL classification rule used in this homework."@en .
+
+g01:robotGripper a cap:EndEffector ;
+    rdfs:label "robot gripper"@en ;
+    rdfs:comment "The simplified end effector used by the robot policy and ontology reasoning workflow for grasping task objects."@en .
+
+cap:hasAffordance a owl:ObjectProperty ;
+    rdfs:label "has affordance"@en ;
+    rdfs:comment "Relates a physical object to an affordance associated with that object in the task context."@en ;
+    rdfs:domain cap:PhysicalObject ;
+    rdfs:range cap:Affordance .
+
+cap:GraspingAffordance a owl:Class ;
+    rdfs:label "grasping affordance"@en ;
+    rdfs:comment "An affordance by which an object may be grasped, held, lifted, or repositioned by a robot gripper."@en ;
+    rdfs:subClassOf cap:Affordance ;
+    skos:definition "An affordance by which an object can be grasped, held, lifted, or repositioned by a robot gripper."@en ;
+    skos:prefLabel "grasping affordance"@en ;
+    skos:relatedMatch soma:Disposition,
+        soma:Grasping ;
+    skos:scopeNote "The course term is represented locally as an affordance class. SOMA models affordance-like knowledge through dispositions and task-oriented action descriptions; therefore relatedMatch is used rather than exactMatch."@en .
+
+cap:PhysicalObject a owl:Class ;
+    rdfs:label "physical object"@en ;
+    rdfs:comment "A material object in the task environment that may be perceived, manipulated, used as a reference object, or assigned a task role."@en ;
+    skos:closeMatch dul:PhysicalObject ;
+    skos:definition "A material object in the task environment, such as a cup, fork, toy block, plate, or basket."@en ;
+    skos:prefLabel "physical object"@en ;
+    skos:relatedMatch soma:ShapedObject ;
+    skos:scopeNote "The course term is intentionally broad. DUL provides a foundational physical-object category, while SOMA provides robotics-oriented refinements for embodied activity contexts."@en .
+

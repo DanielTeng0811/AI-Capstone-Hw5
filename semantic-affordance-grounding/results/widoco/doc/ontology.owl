@@ -1,0 +1,514 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://hcis.io/ontology/aicapstone/2026/group01#"
+     xml:base="https://hcis.io/ontology/aicapstone/2026/group01"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:aicapstone="https://hcis.io/ontology/aicapstone/2026/">
+    <owl:Ontology rdf:about="https://hcis.io/ontology/aicapstone/2026/group01">
+        <owl:imports rdf:resource="https://hcis.io/ontology/aicapstone/2026"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-28</terms:created>
+        <terms:creator rdf:resource="https://hcis.io/ontology/aicapstone/2026/group01/group01"/>
+        <terms:description xml:lang="en">This ontology models cup stacking, cutlery arrangement, and toy block collection objects as typed individuals with task roles, perception labels, pose-frame identifiers, and affordance-based graspability inference.</terms:description>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <terms:title xml:lang="en">Group 1 Semantic Affordance Grounding Ontology</terms:title>
+        <vann:preferredNamespacePrefix>g01</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://hcis.io/ontology/aicapstone/2026/group01/</vann:preferredNamespaceUri>
+        <rdfs:comment xml:lang="en">A group-authored ontology for grounding baseline AI Capstone task objects and connecting the cup-stacking final project to graspability reasoning.</rdfs:comment>
+        <rdfs:label xml:lang="en">Group 1 Semantic Affordance Grounding Ontology</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/canBeManipulatedBy -->
+
+
+    <owl:AnnotationProperty rdf:about="https://hcis.io/ontology/aicapstone/2026/canBeManipulatedBy"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/hasApproxWidth -->
+
+
+    <owl:AnnotationProperty rdf:about="https://hcis.io/ontology/aicapstone/2026/hasApproxWidth"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/hasColor -->
+
+
+    <owl:AnnotationProperty rdf:about="https://hcis.io/ontology/aicapstone/2026/hasColor"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/hasObjectLabel -->
+
+
+    <owl:AnnotationProperty rdf:about="https://hcis.io/ontology/aicapstone/2026/hasObjectLabel"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/hasPoseFrame -->
+
+
+    <owl:AnnotationProperty rdf:about="https://hcis.io/ontology/aicapstone/2026/hasPoseFrame"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/hasReferenceObject -->
+
+
+    <owl:AnnotationProperty rdf:about="https://hcis.io/ontology/aicapstone/2026/hasReferenceObject"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/hasTargetObject -->
+
+
+    <owl:AnnotationProperty rdf:about="https://hcis.io/ontology/aicapstone/2026/hasTargetObject"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/hasTaskRole -->
+
+
+    <owl:AnnotationProperty rdf:about="https://hcis.io/ontology/aicapstone/2026/hasTaskRole"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/hasAffordance -->
+
+
+    <owl:ObjectProperty rdf:about="https://hcis.io/ontology/aicapstone/2026/hasAffordance"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Group -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Group"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/Basket -->
+
+
+    <owl:Class rdf:about="https://hcis.io/ontology/aicapstone/2026/Basket"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/Cup -->
+
+
+    <owl:Class rdf:about="https://hcis.io/ontology/aicapstone/2026/Cup"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/EndEffector -->
+
+
+    <owl:Class rdf:about="https://hcis.io/ontology/aicapstone/2026/EndEffector"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/Fork -->
+
+
+    <owl:Class rdf:about="https://hcis.io/ontology/aicapstone/2026/Fork"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/GraspableObject -->
+
+
+    <owl:Class rdf:about="https://hcis.io/ontology/aicapstone/2026/GraspableObject">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://hcis.io/ontology/aicapstone/2026/PhysicalObject"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://hcis.io/ontology/aicapstone/2026/hasAffordance"/>
+                        <owl:someValuesFrom rdf:resource="https://hcis.io/ontology/aicapstone/2026/GraspingAffordance"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://hcis.io/ontology/aicapstone/2026/PhysicalObject"/>
+        <rdfs:comment xml:lang="en">A physical object inferred to afford grasping by the robot end effector in the task context.</rdfs:comment>
+        <rdfs:label xml:lang="en">graspable object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/GraspingAffordance -->
+
+
+    <owl:Class rdf:about="https://hcis.io/ontology/aicapstone/2026/GraspingAffordance"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/Knife -->
+
+
+    <owl:Class rdf:about="https://hcis.io/ontology/aicapstone/2026/Knife"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/ManipulationTask -->
+
+
+    <owl:Class rdf:about="https://hcis.io/ontology/aicapstone/2026/ManipulationTask"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/PhysicalObject -->
+
+
+    <owl:Class rdf:about="https://hcis.io/ontology/aicapstone/2026/PhysicalObject"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/Plate -->
+
+
+    <owl:Class rdf:about="https://hcis.io/ontology/aicapstone/2026/Plate"/>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/ToyBlock -->
+
+
+    <owl:Class rdf:about="https://hcis.io/ontology/aicapstone/2026/ToyBlock"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/group01/basket01 -->
+
+
+    <owl:NamedIndividual rdf:about="https://hcis.io/ontology/aicapstone/2026/group01/basket01">
+        <rdf:type rdf:resource="https://hcis.io/ontology/aicapstone/2026/Basket"/>
+        <rdfs:comment xml:lang="en">The basket instance required for the baseline toy-block-collection task and modeled as a container target rather than a grasp target.</rdfs:comment>
+        <rdfs:label xml:lang="en">basket 01</rdfs:label>
+        <aicapstone:hasApproxWidth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.300</aicapstone:hasApproxWidth>
+        <aicapstone:hasColor>yellow</aicapstone:hasColor>
+        <aicapstone:hasObjectLabel>basket</aicapstone:hasObjectLabel>
+        <aicapstone:hasPoseFrame>world/object_basket</aicapstone:hasPoseFrame>
+        <aicapstone:hasTaskRole rdf:resource="https://hcis.io/ontology/aicapstone/2026/ContainerTarget"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/group01/block01 -->
+
+
+    <owl:NamedIndividual rdf:about="https://hcis.io/ontology/aicapstone/2026/group01/block01">
+        <rdf:type rdf:resource="https://hcis.io/ontology/aicapstone/2026/ToyBlock"/>
+        <rdfs:comment xml:lang="en">A toy block instance required for the baseline toy-block-collection task and modeled as a collectable grasp target.</rdfs:comment>
+        <rdfs:label xml:lang="en">toy block 01</rdfs:label>
+        <aicapstone:canBeManipulatedBy rdf:resource="https://hcis.io/ontology/aicapstone/2026/group01/robotGripper"/>
+        <aicapstone:hasApproxWidth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.035</aicapstone:hasApproxWidth>
+        <aicapstone:hasColor>red</aicapstone:hasColor>
+        <aicapstone:hasObjectLabel>toy_block_red</aicapstone:hasObjectLabel>
+        <aicapstone:hasPoseFrame>world/object_block_01</aicapstone:hasPoseFrame>
+        <aicapstone:hasTaskRole rdf:resource="https://hcis.io/ontology/aicapstone/2026/CollectableObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/group01/block02 -->
+
+
+    <owl:NamedIndividual rdf:about="https://hcis.io/ontology/aicapstone/2026/group01/block02">
+        <rdf:type rdf:resource="https://hcis.io/ontology/aicapstone/2026/ToyBlock"/>
+        <rdfs:comment xml:lang="en">A second toy block instance required for the baseline toy-block-collection task and modeled as a collectable grasp target.</rdfs:comment>
+        <rdfs:label xml:lang="en">toy block 02</rdfs:label>
+        <aicapstone:canBeManipulatedBy rdf:resource="https://hcis.io/ontology/aicapstone/2026/group01/robotGripper"/>
+        <aicapstone:hasApproxWidth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.035</aicapstone:hasApproxWidth>
+        <aicapstone:hasColor>green</aicapstone:hasColor>
+        <aicapstone:hasObjectLabel>toy_block_green</aicapstone:hasObjectLabel>
+        <aicapstone:hasPoseFrame>world/object_block_02</aicapstone:hasPoseFrame>
+        <aicapstone:hasTaskRole rdf:resource="https://hcis.io/ontology/aicapstone/2026/CollectableObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/group01/blueCup01 -->
+
+
+    <owl:NamedIndividual rdf:about="https://hcis.io/ontology/aicapstone/2026/group01/blueCup01">
+        <rdf:type rdf:resource="https://hcis.io/ontology/aicapstone/2026/Cup"/>
+        <rdfs:comment xml:lang="en">The blue cup instance used as the direct manipulation target in the cup-stacking final project.</rdfs:comment>
+        <rdfs:label xml:lang="en">blue cup 01</rdfs:label>
+        <aicapstone:canBeManipulatedBy rdf:resource="https://hcis.io/ontology/aicapstone/2026/group01/robotGripper"/>
+        <aicapstone:hasApproxWidth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.075</aicapstone:hasApproxWidth>
+        <aicapstone:hasColor>blue</aicapstone:hasColor>
+        <aicapstone:hasObjectLabel>blue_cup</aicapstone:hasObjectLabel>
+        <aicapstone:hasPoseFrame>world/object_blue_cup</aicapstone:hasPoseFrame>
+        <aicapstone:hasTaskRole rdf:resource="https://hcis.io/ontology/aicapstone/2026/TargetObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/group01/cupStackingFinalProject -->
+
+
+    <owl:NamedIndividual rdf:about="https://hcis.io/ontology/aicapstone/2026/group01/cupStackingFinalProject">
+        <rdf:type rdf:resource="https://hcis.io/ontology/aicapstone/2026/ManipulationTask"/>
+        <rdfs:comment xml:lang="en">The final project task in which the learned policy moves the blue cup onto the pink cup.</rdfs:comment>
+        <rdfs:label xml:lang="en">blue cup stacking final project task</rdfs:label>
+        <aicapstone:hasReferenceObject rdf:resource="https://hcis.io/ontology/aicapstone/2026/group01/pinkCup01"/>
+        <aicapstone:hasTargetObject rdf:resource="https://hcis.io/ontology/aicapstone/2026/group01/blueCup01"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/group01/cutleryArrangementBaseline -->
+
+
+    <owl:NamedIndividual rdf:about="https://hcis.io/ontology/aicapstone/2026/group01/cutleryArrangementBaseline">
+        <rdf:type rdf:resource="https://hcis.io/ontology/aicapstone/2026/ManipulationTask"/>
+        <rdfs:comment xml:lang="en">The baseline task context for grounding the knife, fork, and plate objects required by Homework 5.</rdfs:comment>
+        <rdfs:label xml:lang="en">cutlery arrangement baseline task</rdfs:label>
+        <aicapstone:hasReferenceObject rdf:resource="https://hcis.io/ontology/aicapstone/2026/group01/plate01"/>
+        <aicapstone:hasTargetObject rdf:resource="https://hcis.io/ontology/aicapstone/2026/group01/fork01"/>
+        <aicapstone:hasTargetObject rdf:resource="https://hcis.io/ontology/aicapstone/2026/group01/knife01"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/group01/fork01 -->
+
+
+    <owl:NamedIndividual rdf:about="https://hcis.io/ontology/aicapstone/2026/group01/fork01">
+        <rdf:type rdf:resource="https://hcis.io/ontology/aicapstone/2026/Fork"/>
+        <rdfs:comment xml:lang="en">The fork instance required for the baseline cutlery-arrangement task and modeled as a direct manipulation target.</rdfs:comment>
+        <rdfs:label xml:lang="en">fork 01</rdfs:label>
+        <aicapstone:canBeManipulatedBy rdf:resource="https://hcis.io/ontology/aicapstone/2026/group01/robotGripper"/>
+        <aicapstone:hasApproxWidth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.025</aicapstone:hasApproxWidth>
+        <aicapstone:hasColor>silver</aicapstone:hasColor>
+        <aicapstone:hasObjectLabel>fork</aicapstone:hasObjectLabel>
+        <aicapstone:hasPoseFrame>world/object_fork</aicapstone:hasPoseFrame>
+        <aicapstone:hasTaskRole rdf:resource="https://hcis.io/ontology/aicapstone/2026/TargetObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/group01/group01 -->
+
+
+    <owl:NamedIndividual rdf:about="https://hcis.io/ontology/aicapstone/2026/group01/group01">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+        <rdfs:comment xml:lang="en">The Group 1 identity for the Homework 5 semantic affordance grounding submission.</rdfs:comment>
+        <rdfs:label xml:lang="en">Group 1</rdfs:label>
+        <foaf:name xml:lang="en">Group 1</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/group01/knife01 -->
+
+
+    <owl:NamedIndividual rdf:about="https://hcis.io/ontology/aicapstone/2026/group01/knife01">
+        <rdf:type rdf:resource="https://hcis.io/ontology/aicapstone/2026/Knife"/>
+        <rdfs:comment xml:lang="en">The knife instance required for the baseline cutlery-arrangement task and modeled as a direct manipulation target.</rdfs:comment>
+        <rdfs:label xml:lang="en">knife 01</rdfs:label>
+        <aicapstone:canBeManipulatedBy rdf:resource="https://hcis.io/ontology/aicapstone/2026/group01/robotGripper"/>
+        <aicapstone:hasApproxWidth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.025</aicapstone:hasApproxWidth>
+        <aicapstone:hasColor>silver</aicapstone:hasColor>
+        <aicapstone:hasObjectLabel>knife</aicapstone:hasObjectLabel>
+        <aicapstone:hasPoseFrame>world/object_knife</aicapstone:hasPoseFrame>
+        <aicapstone:hasTaskRole rdf:resource="https://hcis.io/ontology/aicapstone/2026/TargetObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/group01/pinkCup01 -->
+
+
+    <owl:NamedIndividual rdf:about="https://hcis.io/ontology/aicapstone/2026/group01/pinkCup01">
+        <rdf:type rdf:resource="https://hcis.io/ontology/aicapstone/2026/Cup"/>
+        <rdfs:comment xml:lang="en">The pink cup instance used as the stacking reference object and placement target for the blue cup.</rdfs:comment>
+        <rdfs:label xml:lang="en">pink cup 01</rdfs:label>
+        <aicapstone:canBeManipulatedBy rdf:resource="https://hcis.io/ontology/aicapstone/2026/group01/robotGripper"/>
+        <aicapstone:hasApproxWidth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.075</aicapstone:hasApproxWidth>
+        <aicapstone:hasColor>pink</aicapstone:hasColor>
+        <aicapstone:hasObjectLabel>pink_cup</aicapstone:hasObjectLabel>
+        <aicapstone:hasPoseFrame>world/object_pink_cup</aicapstone:hasPoseFrame>
+        <aicapstone:hasTaskRole rdf:resource="https://hcis.io/ontology/aicapstone/2026/ReferenceObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/group01/plate01 -->
+
+
+    <owl:NamedIndividual rdf:about="https://hcis.io/ontology/aicapstone/2026/group01/plate01">
+        <rdf:type rdf:resource="https://hcis.io/ontology/aicapstone/2026/Plate"/>
+        <rdfs:comment xml:lang="en">The plate instance required for the baseline cutlery-arrangement task and modeled as a support/reference object rather than a grasp target.</rdfs:comment>
+        <rdfs:label xml:lang="en">plate 01</rdfs:label>
+        <aicapstone:hasApproxWidth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.240</aicapstone:hasApproxWidth>
+        <aicapstone:hasColor>white</aicapstone:hasColor>
+        <aicapstone:hasObjectLabel>plate</aicapstone:hasObjectLabel>
+        <aicapstone:hasPoseFrame>world/object_plate</aicapstone:hasPoseFrame>
+        <aicapstone:hasTaskRole rdf:resource="https://hcis.io/ontology/aicapstone/2026/ReferenceObject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/group01/robotGripper -->
+
+
+    <owl:NamedIndividual rdf:about="https://hcis.io/ontology/aicapstone/2026/group01/robotGripper">
+        <rdf:type rdf:resource="https://hcis.io/ontology/aicapstone/2026/EndEffector"/>
+        <rdfs:comment xml:lang="en">The simplified end effector used by the robot policy and ontology reasoning workflow for grasping task objects.</rdfs:comment>
+        <rdfs:label xml:lang="en">robot gripper</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://hcis.io/ontology/aicapstone/2026/group01/toyBlockCollectionBaseline -->
+
+
+    <owl:NamedIndividual rdf:about="https://hcis.io/ontology/aicapstone/2026/group01/toyBlockCollectionBaseline">
+        <rdf:type rdf:resource="https://hcis.io/ontology/aicapstone/2026/ManipulationTask"/>
+        <rdfs:comment xml:lang="en">The baseline task context for grounding collectable toy blocks and their basket container target.</rdfs:comment>
+        <rdfs:label xml:lang="en">toy block collection baseline task</rdfs:label>
+        <aicapstone:hasReferenceObject rdf:resource="https://hcis.io/ontology/aicapstone/2026/group01/basket01"/>
+        <aicapstone:hasTargetObject rdf:resource="https://hcis.io/ontology/aicapstone/2026/group01/block01"/>
+        <aicapstone:hasTargetObject rdf:resource="https://hcis.io/ontology/aicapstone/2026/group01/block02"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
