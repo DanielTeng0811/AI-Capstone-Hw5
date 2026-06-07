@@ -159,4 +159,10 @@ Protege was also used as a desktop visual validation tool. The screenshot `widoc
 
 ## Relation to the Final Project
 
-The trained model handles the physical manipulation policy for placing the blue cup on the pink cup. This ontology does not replace that policy. It provides a queryable semantic layer that explains which object is the target, which object is the stacking reference, which objects afford grasping, and why a robot knowledge base may classify the blue cup as graspable.
+The final project uses a learned robotic manipulation policy to perform cup stacking. The policy receives perception outputs and predicts robot actions for moving a blue cup onto a pink cup. While the learned model handles the physical manipulation process, it does not explicitly represent semantic knowledge about the objects involved in the task.
+
+The ontology-based semantic grounding layer complements the learned policy by providing structured knowledge about object identity, task roles, and affordances. For example, the ontology explicetly represents that g01:blueCup01 is the target object, g01:pinkCup01 is the stacking reference object, and both objects are inferred to be instances of cap:GraspableObject through affordance-based reasoning.
+
+A robotic system could use this semantic layer before or during task execution. Perception outputs such as object labels and pose frames can be linked to ontology individuals, allowing higher-level reasoning about which objects are relevant to a task. SPARQL queries can then retrieve task-specific information, such as identifying graspable objects or determining which object should be manipulated and which object should serve as the placement target.
+
+Although the current project uses the ontology primarily for semantic grounding and explantion, the same framework could be extended in future work to support task planning, object selection, error recovery, and multi-step manipulation workflows.
