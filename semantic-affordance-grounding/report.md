@@ -144,6 +144,18 @@ Protege was also used as a visual validation tool by opening `ontology/inferred-
 
 The submitted copy of `ontology/imports/course-affordance.ttl` uses the updated course ontology from the course GitHub repository. It is treated as an imported shared vocabulary rather than a Group 1 authored ontology file.
 
+## Relation to the Final Project
+
+The final project uses a learned robotic manipulation policy to perform the cup-stacking task. The policy receives perception outputs from the vision system and predicts the robot actions required to move the blue cup onto the pink cup. While the learned model performs the physical manipulation, it does not explicitly represent semantic knowledge about the objects involved in the task.
+
+The ontology-based semantic grounding layer complements the learned policy by providing structured knowledge about object identities, task roles, and affordances. For example, the ontology explicitly represents that `g01:blueCup01` is the target object and `g01:pinkCup01` is the stacking reference object. Through affordance-based reasoning, both objects are inferred to be instances of `cap:GraspableObject`, making their manipulation semantics explicit and queryable.
+
+The same reasoning process also explains why `g01:plate01` and `g01:basket01` are not inferred as graspable. In this ontology, the plate is modeled primarily as a support/reference object and the basket as a container target. Since they are not associated with the `cap:GraspingAffordance` restriction used by the reasoning rule, they are intentionally excluded from the inferred `cap:GraspableObject` class. This demonstrates that graspability is determined by the ontology's affordance definitions rather than by task relevance alone.
+
+A robotic system could use this semantic layer before or during task execution. Perception outputs such as object labels and pose frames can be linked to ontology individuals, allowing higher-level reasoning about which objects are relevant to a task. SPARQL queries can then retrieve task-specific information, such as identifying graspable objects or determining which object should be manipulated and which object should serve as the placement target.
+
+Although the current project uses the ontology primarily for semantic grounding and explanation, the same framework could be extended in future work to support task planning, object selection, error recovery, and multi-step manipulation workflows. In this way, the ontology serves as an interpretable knowledge layer that complements the learned policy and provides a semantic bridge between perception and robotic action.
+
 ## Limitations
 
 This ontology is intentionally compact. It does not model physical dynamics, grasp pose generation, trajectory planning, or learned policy behavior. Those remain part of the final project pipeline. The semantic layer complements the model by making object identity, task role, and graspability assumptions explicit and queryable.
